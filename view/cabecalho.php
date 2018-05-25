@@ -8,6 +8,7 @@
         <script src="../javascript/funcao.js" type="text/javascript"></script>
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/> 
         <link href="../css/estilo.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
         <?php
             session_start();

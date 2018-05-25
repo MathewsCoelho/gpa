@@ -19,7 +19,6 @@ class ProjetoTO{
         $this->idUsuario = '';
         $this->idProjeto = '';
         $this->statusProjeto = '';
-        
     }
 
     //--------------------------------MÉTODO SET --------------------------//  

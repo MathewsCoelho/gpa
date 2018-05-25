@@ -39,6 +39,24 @@ body{
     background-color: #4b4b4b;
 } 
 
+.header2{
+    width: 100%;
+    background-color: #2980b9;
+    text-align: center;
+}
+
+.header2 ul{
+    display: inline-block;
+}
+
+.header2 ul li a{
+    font-family: "SlimJoe";
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 20px;
+    display: block;
+}
+
 .bodyindex{
     background-color: #34495e;
     margin: 0;
@@ -110,6 +128,10 @@ body{
     height: 10px;
 }
 
+.btnProjeto{
+    padding: 10px;
+}
+
 .btnProjeto a{
     -moz-box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
     box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
@@ -155,22 +177,42 @@ h4{
     margin: 10px 10px;
 }
 
+.conteudo1{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo2{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .tableTarefas{
-    margin-left: 290px;
     border-collapse: collapse;
+    margin-top: 5px;
 }
 
 .tableTarefas th {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     text-align: center;
-    background-color: #19b698;
+    background-color: #000000;
     color: white;
 }
 
 .tableTarefas td, .tableTarefas th{
-    padding: 8px;
-     border: 1px solid #ddd;
+    padding: 16px;
+}
+
+.tableTarefas tr{
+    border: solid 1px;
+
 }
 
 .tableTarefas{

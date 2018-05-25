@@ -2,11 +2,12 @@
     require_once("cabecalho.php");
     require_once('../php/cadProjeto2.php'); 
 ?>
-
-    <div class="btnProjeto">
-        <a href="cadProjeto.php" class="btn btn-default btn-lg btn-group-justified">
-            <span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Novo Projeto
-        </a>
+    <div class="conteudo1">
+        <div class="btnProjeto">
+            <a href="cadProjeto.php" class="btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Novo Projeto
+            </a>
+        </div>
     </div>
     <div class="backAndamento">
         <div class="projDiv">
@@ -15,7 +16,7 @@
 
         <div class="flex flex-wrap" id="iniciada">
             <?php
-                    $status = 'Iniciado';
+                    $status = 'Em Andamento';
                     $query1 = buscaProjetoStatus($_SESSION['id'], $status);
                     
                     if($query1){
