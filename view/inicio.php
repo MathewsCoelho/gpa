@@ -1,6 +1,13 @@
 <?php
     require_once("cabecalho.php");
-    require_once('../php/cadProjeto2.php'); 
+    require_once('../php/DAO/ProjetoDAO.php'); 
+    $status = 'Iniciado';
+    $objDAO = new ProjetoDAO();
+    $query1 = $objDAO->buscarProjetoStatus($_SESSION['id'], $status);
+    $status2 = 'Atrasado';
+    $query2 = $objDAO->buscarProjetoStatus($_SESSION['id'], $status2);
+    $status3 = 'Finalizado';
+    $query3 = $objDAO->buscarProjetoStatus($_SESSION['id'], $status3);
 ?>
     <div class="conteudo1">
         <div class="btnProjeto">
@@ -16,9 +23,7 @@
 
         <div class="flex flex-wrap" id="iniciada">
             <?php
-                    $status = 'Em Andamento';
-                    $query1 = buscaProjetoStatus($_SESSION['id'], $status);
-                    
+                
                     if($query1){
                         while($linha = mysqli_fetch_array($query1)) {
                             $dataIni = explode("-", $linha['data_inicio']);
@@ -57,8 +62,6 @@
         </div>
         <div class="flex flex-wrap" id="atrasada">
             <?php
-                $status2 = 'Atrasado';
-                $query2 = buscaProjetoStatus($_SESSION['id'], $status2);
                 if($query2){
                     while($linha2 = mysqli_fetch_array($query2)){
                         $dataIni = explode("-", $linha2['data_inicio']);
@@ -93,8 +96,6 @@
         </div>
         <div class="flex flex-wrap" id="finalizada">
             <?php
-                $status3 = 'Finalizado';
-                $query3 = buscaProjetoStatus($_SESSION['id'], $status3);
                 if($query3){
                     while($linha3 = mysqli_fetch_array($query3)){
                         $dataIni = explode("-", $linha3['data_inicio']);

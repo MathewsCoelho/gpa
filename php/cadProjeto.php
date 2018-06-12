@@ -17,7 +17,7 @@
         . "alert('Por favor digite uma data válida.');"
         . " history.go(-1);"
         . "</script>";
-        }else{
+    }else{
             session_start();
             
             include 'TO/ProjetoTO.php';

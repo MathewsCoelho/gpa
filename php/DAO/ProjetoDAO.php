@@ -39,15 +39,10 @@ class ProjetoDAO{
 
     public function buscarProjetoStatus($id, $status){
         include '../php/incConecta.php';
-        
-        $sql = "SELECT * FROM projeto WHERE id_usuario = $id AND status_projeto = '$status'" ;
-                
-        $query = mysqli_query($conexao, $sql);
-                        
+        $sql = "SELECT * FROM projeto WHERE id_usuario = $id AND status_projeto = '$status'" ;    
+        $query = mysqli_query($conexao, $sql);           
         if($query && mysqli_num_rows($query) > 0){
-            
-            return $query; 
-            
+            return $query;         
         } else{
             return false;
         }
@@ -58,7 +53,7 @@ class ProjetoDAO{
         include '../php/incConecta.php';
         
         $sql = "SELECT * FROM projeto WHERE id_projeto = " . $id;
-        
+
         $query = mysqli_query($conexao, $sql);
         
         if($query && mysqli_num_rows($query) > 0){
