@@ -28,7 +28,6 @@
                         while($linha = mysqli_fetch_array($query1)) {
                             $dataIni = explode("-", $linha['data_inicio']);
                             $dataIni = $dataIni[2]."/".$dataIni[1]."/".$dataIni[0];
-                            
                             $dataFinal = explode("-", $linha['data_fim']);
                             $dataFinal = $dataFinal[2]."/".$dataFinal[1]."/".$dataFinal[0];
             ?>
@@ -42,7 +41,6 @@
                 <h4><b> Data de Início: </b> <?= $dataIni; ?></h4>
                 <h4><b> Data de Término:</b> <?= $dataFinal; ?> </h4>
                 <h4 class="descricao"><b> Descrição: </b> <?= $linha['descricao']; ?> </h4>
-                
                     <div class="btn-group">
                         <a href="../php/concluiProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($linha['id_projeto']);?>" class="btn btn-success">Concluir</a>
                         <a href="editaProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($linha['id_projeto']);?>" class="btn btn-primary">Editar</a>

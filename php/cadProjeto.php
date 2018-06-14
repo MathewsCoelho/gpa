@@ -19,7 +19,7 @@
         . "</script>";
     }else{
             session_start();
-            
+
             include 'TO/ProjetoTO.php';
 
             $objTO = new ProjetoTO();
@@ -36,9 +36,7 @@
             $objDAO = new ProjetoDAO();
 
             if ($objDAO->salvarProjeto($objTO)) {
-                echo "<script type='text/javascript'>"
-                . " location.href = '../view/inicio.php'"
-                . "</script>";
+                header('location: ../view/inicio.php');
             } else {
                 echo "<script type='text/javascript'>"
                 . "alert('Projeto já cadastrado.');"

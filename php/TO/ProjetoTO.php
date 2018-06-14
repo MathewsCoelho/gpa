@@ -20,9 +20,7 @@ class ProjetoTO{
         $this->idProjeto = '';
         $this->statusProjeto = '';
     }
-
     //--------------------------------MÉTODO SET --------------------------//  
-
     public function setnomeProjeto($nomeProjeto){
         $this->nomeProjeto = $nomeProjeto;
     }
@@ -48,8 +46,7 @@ class ProjetoTO{
         $this->statusProjeto = $statusProjeto;
     }
 
-    //--------------------------------MÉTODO GET --------------------------//    
-    
+    //--------------------------------MÉTODO GET --------------------------//      
     public function getnomeProjeto(){
         return $this->nomeProjeto;
     }
@@ -73,8 +70,7 @@ class ProjetoTO{
     }   
     public function getstatusProjeto(){
         return $this->statusProjeto;
-    }   
-    
+    }     
 }
 
 ?>
