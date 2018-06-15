@@ -1,6 +1,5 @@
 $(document).ready(function ($){
     $("input[name='btnCadastro']").on("click", function (event) {
-
         var nome = $('input[name="nome"]').val();
         var email = $('input[name="email"]').val();
         var senha = $('input[name="senha"]').val();
@@ -35,7 +34,7 @@ $(document).ready(function ($){
             $("input[name='confSenha']").removeClass('errou');
         }
 
-        if (senha !== confSenha || senha === "") {
+        if(senha !== confSenha || senha === ""){
             $("input[name='confSenha']").addClass('errou');
             $("input[name='senha']").addClass('errou');
             valida = false;

@@ -34,7 +34,7 @@
             $objTO->setstatusTarefa($statusTarefa);
             $objTO->setidProjeto($idProjeto);
             include 'DAO/TarefaDAO.php';
-
+        
             $objDAO = new TarefaDAO();
             
             if ($objDAO->salvarTarefa($objTO)) {

@@ -10,16 +10,15 @@ class GrupoTO{
     private $statusProjeto;
     private $idProjeto;
     
-    public function __construct($nomeProjeto = "", $descricao = "", $email = "", $dataInicio = ""
-    , $dataFim = "", $statusProjeto = "", $idUsuario = "", $idProjeto = "") {
-        $this->nomeProjeto = $nomeProjeto;
-        $this->descricao = $descricao;
-        $this->email = $email;
-        $this->dataInicio = $dataInicio;
-        $this->dataFim = $dataFim;
-        $this->statusProjeto = $statusProjeto;
-        $this->idUsuario = $idUsuario;
-        $this->idProjeto = $idProjeto;
+    public function __construct() {
+        $this->nomeProjeto = '';
+        $this->descricao = '';
+        $this->email = '';
+        $this->dataInicio = '';
+        $this->dataFim = '';
+        $this->statusProjeto = '';
+        $this->idUsuario = '';
+        $this->idProjeto = '';
     }
     
     //------ SET ------//
