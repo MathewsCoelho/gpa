@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title> Início </title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="../css/estilo.css" rel="stylesheet" type="text/css"/>
-    </head>
-    
+<?php
+    require_once("cabecalhoInicial.php");
+?> 
     <body class="bodyAzul">
         <div class="botoes">
             <div class="backgroundInicial col-xs-6 text-center">

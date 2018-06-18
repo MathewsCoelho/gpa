@@ -1,8 +1,8 @@
 <?php
     require_once("cabecalho.php");
     require_once('../php/DAO/ProjetoDAO.php'); 
-    $status = 'Iniciado';
     $objDAO = new ProjetoDAO();
+    $status = 'Em Andamento';
     $query1 = $objDAO->buscarProjetoStatus($_SESSION['id'], $status);
     $status2 = 'Atrasado';
     $query2 = $objDAO->buscarProjetoStatus($_SESSION['id'], $status2);
@@ -18,41 +18,46 @@
     </div>
     <div class="backAndamento">
         <div class="projDiv">
-            <h3 class="status andamento"> Andamento </h3>
+            <h3 class="status "> 
+                Em Andamento 
+                <span class="andamento glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+            </h3>
         </div>
 
         <div class="flex flex-wrap" id="iniciada">
             <?php
+            if($query1){
             foreach($query1 as $projetoAnd){
                 $dataIni = explode("-", $projetoAnd['data_inicio']);
                 $dataIni = $dataIni[2]."/".$dataIni[1]."/".$dataIni[0];
                 $dataFinal = explode("-", $projetoAnd['data_fim']);
                 $dataFinal = $dataFinal[2]."/".$dataFinal[1]."/".$dataFinal[0]; 
             ?>
-            <div class="col-lg-md-sm projeto <?= $projetoAnd['status_projeto'] ?>">
-                <div class="principal"> 
-                    <a class="btn btn-default btn-lg " href="listagemTarefas.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAnd['id_projeto'])?>">
-                        <span class="glyphicon glyphicon-folder-open" aria-hidden="true"> </span>  <?= $projetoAnd['nome_projeto']; ?>
-                    </a>
-                </div>   
-                <h4><b> Data de Início: </b> <?= $dataIni; ?></h4>
-                <h4><b> Data de Término:</b> <?= $dataFinal; ?> </h4>
-                <h4 class="descricao"><b> Descrição: </b> <?= $projetoAnd['descricao']; ?> </h4>
+                <div class="col-lg-md-sm projeto">
+                    <div class="principal"> 
+                        <a class="btn btn-default btn-lg " href="listagemTarefas.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAnd['id_projeto'])?>">
+                            <span class="glyphicon glyphicon-folder-open" aria-hidden="true"> </span>  <?= $projetoAnd['nome_projeto']; ?>
+                        </a>
+                    </div>   
+                    <h4><b> Data de Início: </b> <?= $dataIni; ?></h4>
+                    <h4><b> Data de Término:</b> <?= $dataFinal; ?> </h4>
+                    <h4 class="descricao"><b> Descrição: </b> <?= $projetoAnd['descricao']; ?> </h4>
                     <div class="btn-group">
-                        <a href="../php/concluiProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAnd['id_projeto']);?>" class="btn btn-success">Concluir</a>
-                        <a href="editaProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAnd['id_projeto']);?>" class="btn btn-primary">Editar</a>
-                        <a href="../php/excluiProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAnd['id_projeto']);?>" class="btn btn-danger btnExcluir">Excluir</a>
+                        <a href="../php/concluiProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAnd['id_projeto']);?>" class="botao btnSucesso">Concluir</a>
+                        <a href="editaProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAnd['id_projeto']);?>" class="botao btnEdicao">Editar</a>
+                        <a href="../php/excluiProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAnd['id_projeto']);?>" class="botao btnPerigo">Excluir</a>
                     </div>
-            </div>        
+                </div>        
             <?php       
             }
             ?>
-
         </div>
     </div>
     <div class="backAtrasado">
         <div class="projDiv">
-            <h3 class="status atrasado"> Atrasados </h3>
+            <h3 class="status"> Atrasados 
+                <span class="atrasado glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+            </h3>
         </div>
         <div class="flex flex-wrap" id="atrasada">
             <?php
@@ -62,29 +67,31 @@
                 $dataFinal = explode("-", $projetoAtr['data_fim']);
                 $dataFinal = $dataFinal[2]."/".$dataFinal[1]."/".$dataFinal[0];
             ?>
-        <div class="col-lg-md-sm projeto Atrasado">
-            <div class="principal"> 
-                <a class="btn btn-default btn-lg " href="listagemTarefas.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAtr['id_projeto'])?>">
-                    <span class="glyphicon glyphicon-folder-open" aria-hidden="true"> </span>  <?= $projetoAtr['nome_projeto']; ?>
-                </a>
-            </div>   
-            <h4> <b> Data de Início: </b> <?= $dataIni; ?></h4>
-            <h4> <b> Data de Término: </b> <?= $dataFinal; ?> </h4>
-            <h4 class="descricao"> <b> Descrição: </b> <?= $projetoAtr['descricao']; ?></h4>
-            <div class="btn-group">
-                <a href="../php/concluiProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAtr['id_projeto']);?>" class="btn btn-success">Concluir</a>
-                <a href="editaProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAtr['id_projeto']);?>" class="btn btn-primary">Editar</a>
-                <a href="../php/excluiProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAtr['id_projeto']);?>" class="btn btn-danger btnExcluir">Excluir</a>
+            <div class="col-lg-md-sm projeto">
+                <div class="principal"> 
+                    <a class="btn btn-default btn-lg " href="listagemTarefas.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAtr['id_projeto'])?>">
+                        <span class="glyphicon glyphicon-folder-open" aria-hidden="true"> </span>  <?= $projetoAtr['nome_projeto']; ?>
+                    </a>
+                </div>   
+                <h4> <b> Data de Início: </b> <?= $dataIni; ?></h4>
+                <h4> <b> Data de Término: </b> <?= $dataFinal; ?> </h4>
+                <h4 class="descricao"> <b> Descrição: </b> <?= $projetoAtr['descricao']; ?></h4>
+                <div class="btn-group">
+                    <a href="../php/concluiProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAtr['id_projeto']);?>" class="botao btnSucesso">Concluir</a>
+                    <a href="editaProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAtr['id_projeto']);?>" class="botao btnEdicao">Editar</a>
+                    <a href="../php/excluiProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAtr['id_projeto']);?>" class="botao btnPerigo btnExcluir">Excluir</a>
+                </div>
             </div>
-        </div>
             <?php
                 }
             ?>
         </div>
     </div>
     <div class="backFinalizado">
-         <div class="projDiv">
-            <h3 class="status finalizado"> Finalizados </h3>
+        <div class="projDiv">
+            <h3 class="status"> Finalizados 
+                <span class="finalizado glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+            </h3>
         </div>
         <div class="flex flex-wrap" id="finalizada">
             <?php
@@ -94,7 +101,7 @@
                 $dataFinal = explode("-", $projetoFin['data_fim']);
                 $dataFinal = $dataFinal[2]."/".$dataFinal[1]."/".$dataFinal[0];
             ?>
-            <div class="col-lg-md-sm projeto <?= $projetoFin['status_projeto'] ?>">
+            <div class="col-lg-md-sm projeto">
                 <div class="principal"> 
                     <a class="btn btn-default btn-lg " href="listagemTarefas.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoFin['id_projeto'])?>">
                         <span class="glyphicon glyphicon-folder-open" aria-hidden="true"> </span>  <?php echo $projetoFin['nome_projeto']; ?>
@@ -104,8 +111,8 @@
                 <h4><b> Data de Término: </b> <?= $dataFinal; ?> </h4>
                 <h4 class="descricao"><b> Descrição: </b> <?= $projetoFin['descricao']; ?></h4>
                 <div class="btn-group">
-                    <a href="editaProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoFin['id_projeto']);?>" class="btn btn-primary">Editar</a>
-                    <a href="../php/excluiProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoFin['id_projeto']);?>" class="btn btn-danger btnExcluir">Excluir</a>
+                    <a href="editaProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoFin['id_projeto']);?>" class="botao btnEdicao">Editar</a>
+                    <a href="../php/excluiProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoFin['id_projeto']);?>" class="botao btnPerigo btnExcluir">Excluir</a>
                 </div>
             </div>
             <?php 

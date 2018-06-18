@@ -33,8 +33,7 @@
             . "</script>";
         } else{
             unset ($_SESSION['email']);
-            unset ($_SESSION['senha']); 
-            
+            unset ($_SESSION['senha']);   
         }
     }
 ?>

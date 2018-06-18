@@ -13,12 +13,13 @@
                 $dataFinal = explode("-", $linha['data_fim']);
                 $dataFinal = $dataFinal[2] . "/" . $dataFinal[1] . "/" . $dataFinal[0];
         ?>
-        <div class="header2">
+        <div class="header2 <?= $linha['status_projeto']; ?> ">
             <ul class="nav nav-pills">
-                <li> <a> <b> <?= $linha['nome_projeto']; ?> </b> </a> </li>
-                <li> <a> <b> <?= $dataIni; ?> </b> </a> </li>
-                <li> <a> <b> <?= $dataFinal; ?> </b> </a> </li>
-                 <li> <a> <b> <?= $linha['status_projeto']; ?> </b> </a> </li>
+                <li> <a> <?= $linha['nome_projeto']; ?> </a> </li>
+                <li> <a>  <?= $dataIni; ?> </a> </li>
+                <li> <a>  <?= $dataFinal; ?> </a> </li>
+                <li> <a>  <?= $linha['status_projeto']; ?> </a> </li>
+                <li> <a href="editaProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($idProjeto);?>"> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> </a> </li> 
             </ul>
         </div>
         <?php
@@ -35,7 +36,7 @@
                 <?php
                     if($query2){
                 ?>
-        <div class="conteudo2">
+        <div class="conteudo1">
             <table class="tableTarefas">
                 <tr>
                     <th> Etiquetas </th>
@@ -63,9 +64,9 @@
                     <td> <?= $tarefa['status_tarefa']; ?></td>
 
                     <td class="btn-group">
-                        <a href="../php/concluirTarefa.php?idTarefa=<?php echo base64_encode($tarefa['id_tarefa'])?>" class="btn btn-success">Concluir</a>
-                        <a href="editaTarefa.php?idTarefa=<?php echo base64_encode($tarefa['id_tarefa'])?>&idProjeto=<?php echo base64_encode($idProjeto) ?>" class="btn btn-primary">Editar</a>
-                        <a href="../php/excluiTarefa.php?idTarefa=<?php echo base64_encode($tarefa['id_tarefa'])?>" class="btn btn-danger btnExcluirTarefa">Excluir</a>
+                        <a href="../php/concluirTarefa.php?idTarefa=<?php echo base64_encode($tarefa['id_tarefa'])?>" class="botao btnSucesso">Concluir</a>
+                        <a href="editaTarefa.php?idTarefa=<?php echo base64_encode($tarefa['id_tarefa'])?>&idProjeto=<?php echo base64_encode($idProjeto) ?>" class="botao btnEdicao">Editar</a>
+                        <a href="../php/excluiTarefa.php?idTarefa=<?php echo base64_encode($tarefa['id_tarefa'])?>" class="botao btnPerigo btnExcluirTarefa">Excluir</a>
                     </td>
                 </tr>
                 

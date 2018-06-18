@@ -4,7 +4,7 @@
     $dataInicio = $_POST['dataInicio'];
     $dataFim = $_POST['dataFim'];
     $data_cadastro = date('Y-m-d');
-    $statusProjeto = $_POST['statusProjeto'];
+    $statusProjeto = 1;
         
     if(empty($nomeProjeto) || empty($descricao) || empty($dataInicio) || empty($dataFim)){
         echo "<script type='text/javascript'>"

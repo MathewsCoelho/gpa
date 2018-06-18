@@ -3,10 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <script src="../javascript/jquery-2.1.4.js" type="text/javascript"></script>
-        <script src="../javascript/bootstrap.js" type="text/javascript"></script>
-        <script src="../javascript/funcao.js" type="text/javascript"></script>
-        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/> 
-        <link href="../css/estilo.css" rel="stylesheet" type="text/css"/>
+        <script src="../assets/javascript/jquery-2.1.4.js" type="text/javascript"></script>
+        <script src="../assets/javascript/bootstrap.js" type="text/javascript"></script>
+        <script src="../assets/javascript/funcao.js" type="text/javascript"></script>
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/> 
+        <link href="../assets/css/estilo.css" rel="stylesheet" type="text/css"/>
     </head>
     
+
+    <header>
+        <div class="headerInicial">
+            <ul class="nav nav-pills">
+                <li><a href="../view/inicio.php"> Entrar </a></li>
+                <li><a href="../view/grupos.php"> Cadastrar </a></li>
+            </ul> 
+        </div>
+    </header>

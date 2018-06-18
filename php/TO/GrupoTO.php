@@ -1,80 +1,55 @@
 <?php
 
 class GrupoTO{
-    private $idUsuario;
-    private $nomeProjeto;
+    private $idGrupo;
+    private $nomeGrupo;
     private $descricao;
-    private $email;
-    private $dataInicio;
-    private $dataFim;
-    private $statusProjeto;
-    private $idProjeto;
+    private $idUsuario;
+    private $dataCadastro;
+
     
     public function __construct() {
-        $this->nomeProjeto = '';
+        $this->idGrupo = '';
         $this->descricao = '';
-        $this->email = '';
-        $this->dataInicio = '';
-        $this->dataFim = '';
-        $this->statusProjeto = '';
+        $this->nomeGrupo = '';
         $this->idUsuario = '';
-        $this->idProjeto = '';
+        $this->dataCadastro = '';
     }
     
     //------ SET ------//
-    public function setnomeProjeto($nomeProjeto){
-        $this->nomeProjeto = $nomeProjeto;
+    public function setidGrupo($idGrupo){
+        $this->idGrupo = $idGrupo;
     }
-    public function setDescricao($descricao){
+    public function setdescricao($descricao){
         $this->descricao = $descricao;
     }
-    public function setEmail($email){
-        $this->email = $email;
-    }
-    public function setdataInicio($dataInicio){
-        $this->dataInicio = $dataInicio;
-    }
-    public function setdataFim($dataFim){
-        $this->dataFim = $dataFim;
-    }
-    public function setstatusProjeto($statusProjeto){
-        $this->statusProjeto = $statusProjeto;
+    public function setnomeGrupo($nomeGrupo){
+        $this->nomeGrupo = $nomeGrupo;
     }
     public function setidUsuario($idUsuario){
         $this->idUsuario = $idUsuario;
     }
-    public function setidProjeto($idProjeto){
-        $this->idProjeto = $idProjeto;
+    public function setdataCadastro($dataCadastro){
+        $this->dataCadastro = $dataCadastro;
     }
-    
+
     //----- GET ------//
     
-    public function getnomeProjeto(){
-        return $this->nomeProjeto;
+    public function getidGrupo(){
+        return $this->idGrupo;
     }
-    public function getDescricao(){
+    public function getdescricao(){
         return $this->descricao;
     }
-    public function getEmail(){
-        return $this->email;
+    public function getnomeGrupo(){
+        return $this->nomeGrupo;
     }
-    public function getdataInicio(){
-        return $this->dataInicio;
-    }
-    public function getdataFim(){
-        return $this->dataFim;
-    }
-    public function getstatusProjeto(){
-        return $this->statusProjeto;
-    } 
     public function getidUsuario(){
         return $this->idUsuario;
-    } 
-    public function getidProjeto(){
-        return $this->idProjeto;
-    } 
-    
-    
+    }
+    public function getdataCadastro(){
+        return $this->dataCadastro;
+    }
 }
 
 ?>

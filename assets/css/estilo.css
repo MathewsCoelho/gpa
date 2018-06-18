@@ -1,0 +1,343 @@
+@font-face{
+    font-family: "SlimJoe";
+    src: url('../fonts/SlimJoe.otf');
+}
+    
+body{
+    background-color: #4b4b4b;
+    margin: 0;
+}
+
+.header{
+    width: 100%;
+    background-color: #f5f6fa;
+    text-align: center;
+    box-shadow: 0 0 25px #333333;
+}
+
+.header ul{
+    display: inline-block;
+}
+
+.header ul li{
+    padding: 5px 0 0;
+}
+
+.header ul li a{
+    font-family: "SlimJoe";
+    text-decoration: none;
+    color: #4b4b4b;
+    font-size: 20px;
+    display: block;
+    font-weight: bold;
+}
+
+.header li a:hover{
+    background-color: #4b4b4b;
+    color: #ffffff;
+    -webkit-transition: all .6s ease;
+    -moz-transition: all .6s ease;
+    -ms-transition: all .6s ease;
+    transition: all .6s ease;
+}
+
+.header li a:focus{
+    background-color: #4b4b4b;
+    color: #ffffff;
+} 
+
+.headerInicial{
+    width: 100%;
+    background-color: #f5f6fa;
+    text-align: right;
+    box-shadow: 0 0 25px #333333;
+}
+
+.headerInicial ul{
+    display: inline-block;
+}
+
+.headerInicial ul li{
+    padding: 5px 0 0;
+}
+
+.headerInicial ul li a{
+    font-family: "SlimJoe";
+    text-decoration: none;
+    color: #4b4b4b;
+    font-size: 20px;
+    display: block;
+    font-weight: bold;
+}
+
+.headerInicial li a:hover{
+    background-color: #4b4b4b;
+    color: #ffffff;
+    -webkit-transition: all .6s ease;
+    -moz-transition: all .6s ease;
+    -ms-transition: all .6s ease;
+    transition: all .6s ease;
+}
+
+.headerInicial li a:focus{
+    background-color: #4b4b4b;
+    color: #ffffff;
+} 
+
+.header2{
+    width: 100%;
+    background-color: #2980b9;
+    text-align: center;
+}
+
+.header2 ul{
+    display: inline-block;
+}
+
+.header2 ul li a{
+    font-family: "SlimJoe";
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 20px;
+    display: block;
+    font-weight: bold;
+}
+
+.botoes{
+    margin: 120px auto;
+    width: 600px;
+}
+
+.bodyAzul{
+    background-image: url(../imagens/wp.jpg);
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+.formularioCad{
+    padding: 25px;
+    margin: 30px auto;
+    background-color: #ecf0f1;
+    width: 450px;
+    -webkit-box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
+    -moz-box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
+    box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
+    display: block;
+}
+
+.formularioLogin{
+    padding: 25px;
+    margin: 100px auto;
+    background-color: #ecf0f1;
+    width: 350px;
+    -webkit-box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
+    -moz-box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
+    box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
+    display: block;
+}
+
+.errou{
+    border-color: #FF0000;
+}
+
+.acertou{
+    border-color: #008000;
+}
+
+.logo{
+    margin: 0px auto;
+}
+
+.h4{
+    color: #FFFFFF;
+}
+
+.backgroundInicial{
+    background-color: rgba(105,105,105,0.6);
+    width: 250px;
+    height: 120px;
+    border-radius: 10px;
+}
+
+.glyphicon{
+    display: inline;
+}
+
+.glyphicon-off{
+    height: 10px;
+}
+
+.glyphicon-envelope{
+    color: #000000;
+}
+
+.botao{
+    width: auto;
+    height: auto;
+    padding: 10px 8px;
+    margin: 0;
+    color: #fff;
+    background-color: #4b4b4b;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 6px; 
+    font-weight: bold;
+    border: 0;
+}
+
+.botao:hover, .botao:focus{
+    text-decoration: none;
+    color: #fff;
+    background-color: #373636;
+}
+
+.btnBloq{
+    display: block;
+    width: 100%;
+}
+
+.btnSucesso{
+    background-color: #ecf0f1;
+    border: 1px solid #13c75e;
+    color: #13c75e;
+}
+
+.btnSucesso:hover, .btnSucesso:focus{
+    background-color: #13c75e;
+}
+
+.btnEdicao{
+    background-color: #ecf0f1;
+    border: 1px solid #3498db;
+    color: #3498db;
+}
+
+.btnEdicao:hover, .btnEdicao:focus{
+    background-color: #3498db;
+}
+
+.btnPerigo{
+    background-color: #ecf0f1;
+    border: 1px solid #e74c3c;
+    color: #e74c3c;
+}
+
+.btnPerigo:hover, .btnPerigo:focus{
+    background-color: #e74c3c;
+}
+
+.btnProjeto{
+    padding: 10px;
+}
+
+.btnProjeto a{
+    -moz-box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
+    box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
+    text-decoration: none;
+}
+
+.projeto {
+    text-align: center;
+    background-color: #ecf0f1;
+    margin: 15px 12px;
+    height: 230px;
+    width: 280px;
+    -moz-box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
+    box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
+    border-radius: 10px;
+    float: left;
+    display: block;
+}
+
+h4{
+   font-size: small;
+   color: #34495e;
+}
+
+.principal{
+    color: #19b698;
+    margin: 20px auto;
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.projetoEspecifico{
+    margin: 10px 10px;
+}
+
+.conteudo1{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.tableTarefas{
+    border-collapse: collapse;
+    margin-top: 5px;
+    background-color: #f2f2f2;
+}
+
+.tableTarefas th {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    background-color: #000000;
+    color: white;
+}
+
+.tableTarefas td, .tableTarefas th{
+    padding: 16px;
+}
+
+.tableTarefas tr{
+    border:#4b4b4b solid 1px;
+}
+
+.sobrenos{
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: #1abc9c;
+    height: auto;
+    margin: 0 auto;
+    
+}
+
+.status{
+    color: #FFFFFF;
+    margin: 0 0 0 20px;
+    width: 200px;
+}
+
+.projDiv{
+    width: 100%;
+    padding: 10px 0 0 0;
+}
+
+.flex{
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
+.backAndamento{
+    background-color: #2980b9;
+}
+
+.backFinalizado{
+    background-color: #16a085;
+}
+
+.backAtrasado{
+    background-color: #d24d57;
+}
+
+.glyphicon-menu-down{
+    font-size: 15px;
+}

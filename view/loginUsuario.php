@@ -1,10 +1,9 @@
 <?php
     require_once('cabecalhoInicial.php');
 ?>
-    <body class="bodyAzul">
-        
+    <body class="bodyAzul">  
         <div class="formularioLogin">
-            <img src="../imagens/logo2.png">
+            <img src="../assets/imagens/logo2.png">
             <form name="login" action="../php/loginUsuario.php" method="post">
                 <p>
                     <label for="email">E-mail: </label>
@@ -15,12 +14,12 @@
                     <input type="password" name="senha" class="form-control" placeholder="Digite sua senha">
                 </p>
                 <p class="text-right">
-                    <input type="button" name="btnLogin" value="Login" class="btn btn-primary btn-padrao btn-block">
+                    <input type="button" name="btnLogin" value="Login" class="botao btnBloq">
                 </p>
-                <a href="cadUsuario.php">
-                    Não fez seu cadastro? Clique aqui.
-                </a>
             </form>
+            <a href="cadUsuario.php">
+                Não fez seu cadastro? Clique aqui.
+            </a>
         </div>
     </body>
 </html>
