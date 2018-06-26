@@ -2,7 +2,7 @@
     require_once('cabecalhoInicial.php');
 ?>
     <body class="bodyAzul">  
-        <div class="formularioLogin">
+        <div class="formularios formularioLogin">
             <img src="../assets/imagens/logo2.png">
             <form name="login" action="../php/loginUsuario.php" method="post">
                 <p>

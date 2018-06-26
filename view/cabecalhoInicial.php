@@ -14,8 +14,8 @@
     <header>
         <div class="headerInicial">
             <ul class="nav nav-pills">
-                <li><a href="../view/inicio.php"> Entrar </a></li>
-                <li><a href="../view/grupos.php"> Cadastrar </a></li>
+                <li><a href="../view/loginUsuario.php"> Entrar </a></li>
+                <li><a href="../view/cadUsuario.php"> Cadastrar </a></li>
             </ul> 
         </div>
     </header>

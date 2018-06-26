@@ -3,7 +3,7 @@
     $index = base64_encode('idProjeto');
     $idProjeto = base64_decode($_GET[$index]);
 ?>
-        <div class="formularioCad">
+        <div class="formularioCad formularios">
             <form name="cadTarefa" id="cadTarefa" action="../php/cadTarefa.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($idProjeto); ?>" method="post">
                 <p>
                     <label for="nomeTarefa">Nome da Tarefa: </label>

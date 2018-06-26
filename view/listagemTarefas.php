@@ -5,6 +5,7 @@
         $idProjeto = base64_decode($_GET[$index]);
         include '../php/cadTarefa2.php';
         $query2 = buscarTarefa($idProjeto);
+        
         $query = buscaProjetoEspecifico($idProjeto);
         if ($query){
             while ($linha = mysqli_fetch_array($query)){

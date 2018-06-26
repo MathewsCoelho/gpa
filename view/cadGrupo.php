@@ -1,7 +1,7 @@
 <?php
     require_once('cabecalho.php');
 ?>
-        <div class="formularioCad">            
+        <div class="formularioCad formularios">            
             <form name="cadastroGrupo" id="Cadastro" action="../php/cadGrupo.php" method="post">
                 <p>
                     <label for="nomeGrupo">Nome do Grupo: </label>
@@ -13,11 +13,7 @@
                 </p>
                 <p class="text-right">
                     <input type="submit" name="btnCadastro" value="Cadastrar Grupo" class="botao btnBloq">
-                </p>
-                <!--<p>
-                    <label> Email do Colaborador: </label>
-                    <input name="email" type="text" class="form-control" placeholder="Digite o email do Colaborador" maxlength="50">
-                </p> !-->             
+                </p> 
             </form>
             <a href="grupos.php" class="text-center">
                 Voltar

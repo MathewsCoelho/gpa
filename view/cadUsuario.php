@@ -2,7 +2,7 @@
     require_once("cabecalhoInicial.php");
 ?> 
     <body class="bodyAzul">
-        <div class="formularioCad">
+        <div class="formularios formularioCad">
             <img src="../assets/imagens/logo.png">
             <form name="cadastro" id="Cadastro" action="../php/cadUsuario.php" method="post">
                 <p>

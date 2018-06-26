@@ -35,7 +35,7 @@
             ?>
                 <div class="col-lg-md-sm projeto">
                     <div class="principal"> 
-                        <a class="btn btn-default btn-lg " href="listagemTarefas.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAnd['id_projeto'])?>">
+                        <a class="btn btn-default btn-lg" href="listagemTarefas.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAnd['id_projeto'])?>">
                             <span class="glyphicon glyphicon-folder-open" aria-hidden="true"> </span>  <?= $projetoAnd['nome_projeto']; ?>
                         </a>
                     </div>   
@@ -45,15 +45,16 @@
                     <div class="btn-group">
                         <a href="../php/concluiProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAnd['id_projeto']);?>" class="botao btnSucesso">Concluir</a>
                         <a href="editaProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAnd['id_projeto']);?>" class="botao btnEdicao">Editar</a>
-                        <a href="../php/excluiProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAnd['id_projeto']);?>" class="botao btnPerigo">Excluir</a>
+                        <a href="../php/excluiProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAnd['id_projeto']);?>" class="botao btnPerigo btnExcluir">Excluir</a>
                     </div>
                 </div>        
             <?php       
+                }
             }
             ?>
         </div>
     </div>
-    <div class="backAtrasado">
+    <div class="Atrasado">
         <div class="projDiv">
             <h3 class="status"> Atrasados 
                 <span class="atrasado glyphicon glyphicon-menu-down" aria-hidden="true"></span>
@@ -87,7 +88,7 @@
             ?>
         </div>
     </div>
-    <div class="backFinalizado">
+    <div class="Finalizado">
         <div class="projDiv">
             <h3 class="status"> Finalizados 
                 <span class="finalizado glyphicon glyphicon-menu-down" aria-hidden="true"></span>

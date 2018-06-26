@@ -8,6 +8,12 @@ body{
     margin: 0;
 }
 
+.bodyAzul{
+    background-image: url(../imagens/wp.jpg);
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
 .header{
     width: 100%;
     background-color: #f5f6fa;
@@ -108,40 +114,27 @@ body{
     width: 600px;
 }
 
-.bodyAzul{
-    background-image: url(../imagens/wp.jpg);
-    background-repeat: no-repeat;
-    margin: 0;
+.formularios{
+    padding: 25px;
+    background-color: #ecf0f1;
+    -webkit-box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
+    -moz-box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
+    box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
+    display: block;
 }
 
 .formularioCad{
-    padding: 25px;
     margin: 30px auto;
-    background-color: #ecf0f1;
     width: 450px;
-    -webkit-box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
-    -moz-box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
-    box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
-    display: block;
 }
 
 .formularioLogin{
-    padding: 25px;
     margin: 100px auto;
-    background-color: #ecf0f1;
     width: 350px;
-    -webkit-box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
-    -moz-box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
-    box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
-    display: block;
 }
 
 .errou{
     border-color: #FF0000;
-}
-
-.acertou{
-    border-color: #008000;
 }
 
 .logo{
@@ -152,12 +145,7 @@ body{
     color: #FFFFFF;
 }
 
-.backgroundInicial{
-    background-color: rgba(105,105,105,0.6);
-    width: 250px;
-    height: 120px;
-    border-radius: 10px;
-}
+
 
 .glyphicon{
     display: inline;
@@ -224,6 +212,18 @@ body{
 
 .btnPerigo:hover, .btnPerigo:focus{
     background-color: #e74c3c;
+}
+
+.btnNovo{
+    background-color: #304FFE;
+    color: #fff;
+    padding: 13px 11px;
+    font-size: 18px;
+}
+
+.btnNovo:hover, .btnNovo:focus{
+    background-color: #2239bd;
+
 }
 
 .btnProjeto{
@@ -330,12 +330,12 @@ h4{
     background-color: #2980b9;
 }
 
-.backFinalizado{
-    background-color: #16a085;
+.Atrasado{
+    background-color: #d24d57;
 }
 
-.backAtrasado{
-    background-color: #d24d57;
+.Finalizado{
+    background-color: #16a085;
 }
 
 .glyphicon-menu-down{

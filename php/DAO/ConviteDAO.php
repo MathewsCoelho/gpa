@@ -2,22 +2,19 @@
 
 include_once '../php/TO/BancoTO.php';
 
-class GrupoDAO{
+class ConviteDAO{
     
     public function __construct() {
         $this->BancoTO = new BancoTO();
     }
 
-    public function salvarGrupo($objTO){        
+    public function salvarConvite($objTO){        
         $sql = "INSERT INTO grupo(nome_grupo, descricao, id_usuario, data_cadastro, status)"
             . "VALUES('".$objTO->getnomeGrupo()."', '".$objTO->getDescricao()."', '".$objTO->getidUsuario()
             ."', '".$objTO->getdataCadastro() . "', 1)";
         $query = mysqli_query($this->BancoTO->conn, $sql);
-        $id = mysql_insert_id();
-        echo $id;
-        die();
         if($query){
-            return $id_grupo;
+            return $query;
         } else{
             return false;
         }
@@ -48,6 +45,8 @@ class GrupoDAO{
 
    public function excluirGrupo($id){
         $sql = "UPDATE grupo SET status = 0 WHERE id_grupo = " . $id;
+         echo $sql;
+        
         if(mysqli_query($this->BancoTO->conn, $sql)){
             return true;
         } else{

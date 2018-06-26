@@ -6,7 +6,7 @@
     $query = buscaProjetoEspecifico($idProjeto);
     $linha = mysqli_fetch_array($query);
 ?>
-        <div class="formularioCad">
+        <div class="formularioCad formularios">
             <form name="cadProjeto" id="cadProjeto" action="../php/editaProjeto2.php?idProjeto=<?= $idProjeto ?>" method="post">
                 <p>
                     <label for="nomeProjeto">Nome do Projeto: </label>

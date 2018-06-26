@@ -25,9 +25,8 @@ class TarefaDAO{
     public function buscarTarefa($id){
         $sql = "SELECT * FROM tarefa WHERE id_projeto = " . $id;
         $tarefas = array(); 
-        $query = mysqli_query($this->BancoTO->conn, $sql);
-                        
-        if($query){     
+        $query = mysqli_query($this->BancoTO->conn, $sql);                 
+        if($query && mysqli_num_rows($query) > 0){     
             while($tarefa = mysqli_fetch_assoc($query))
                 array_push($tarefas, $tarefa);
             return $query; 

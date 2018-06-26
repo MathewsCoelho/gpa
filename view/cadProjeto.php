@@ -1,7 +1,7 @@
 <?php
     require_once("cabecalho.php");
 ?>
-        <div class="formularioCad">
+        <div class="formularioCad formularios">
             <form name="cadProjeto" id="cadProjeto" action="../php/cadProjeto.php" method="post">
                 <p>
                     <label for="nomeProjeto">Nome do Projeto: </label>

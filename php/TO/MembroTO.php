@@ -11,8 +11,6 @@ class MembroTO{
         $this->idGrupo = '';
         $this->idUsuario = '';
         $this->tipo = '';
-        $this->status = '';
-        $this->descricao = '';
     }
     
     //------ SET ------//

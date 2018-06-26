@@ -22,14 +22,23 @@
         include_once 'DAO/GrupoDAO.php';
 
         $objDAO = new GrupoDAO();
+        $idGrupo = $objDAO->salvarGrupo($objTO);
 
-        if ($objDAO->salvarGrupo($objTO)) {
+        if ($idGrupo){
+            if(salvarMembro($_SESSION['id'])){
             echo "<script type='text/javascript'>"
             . " location.href = '../view/grupos.php'"
             . "</script>";
+            }
+            else{
+                echo "<script type='text/javascript'>"
+            . "alert('Falha ao cadastrar membro.');"
+            . " history.go(-1);"
+            . "</script>";
+            }
         } else {
             echo "<script type='text/javascript'>"
-            . "alert('Usuário já está cadastrado.');"
+            . "alert('Falha ao cadastrar grupo.');"
             . " history.go(-1);"
             . "</script>";
         }

@@ -6,7 +6,7 @@
     $query = buscaTarefaEspecifica($idTarefa);
     $linha = mysqli_fetch_array($query);
 ?>
-        <div class="formularioCad">
+        <div class="formularioCad formularios">
             <form name="cadTarefa" id="cadTarefa" action="../php/editaTarefa2.php?idTarefa=<?= $idTarefa; ?>&idProjeto=<?= $idProjeto; ?>" method="post">
                 <p>
                     <label for="nomeTarefa">Nome da Tarefa: </label>
