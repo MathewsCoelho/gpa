@@ -34,6 +34,10 @@
         } else{
             unset ($_SESSION['email']);
             unset ($_SESSION['senha']);   
+            echo "<script type='text/javascript'>"
+                . "alert('Usuário não está cadastrado.');"
+                . " history.go(-1);"
+                . "</script>";
         }
     }
 ?>

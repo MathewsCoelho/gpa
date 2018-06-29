@@ -11,16 +11,17 @@
 ?>
     <div class="conteudo1">
         <div class="btnProjeto">
-            <a href="cadProjeto.php" class="btn btn-default btn-lg">
-                <span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Novo Projeto
-            </a>
+            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#cadastroProjeto">
+                <i class="fa fa-plus-circle" aria-hidden="true"></i> Novo Projeto
+            </button>
         </div>
     </div>
+
     <div class="backAndamento">
         <div class="projDiv">
             <h3 class="status "> 
                 Em Andamento 
-                <span class="andamento glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                <i class="andamento fa fa-sort-desc" aria-hidden="true"></i>
             </h3>
         </div>
 
@@ -36,7 +37,7 @@
                 <div class="col-lg-md-sm projeto">
                     <div class="principal"> 
                         <a class="btn btn-default btn-lg" href="listagemTarefas.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAnd['id_projeto'])?>">
-                            <span class="glyphicon glyphicon-folder-open" aria-hidden="true"> </span>  <?= $projetoAnd['nome_projeto']; ?>
+                            <i class="fa fa-folder-open-o" aria-hidden="true"></i>  <?= $projetoAnd['nome_projeto']; ?>
                         </a>
                     </div>   
                     <h4><b> Data de Início: </b> <?= $dataIni; ?></h4>
@@ -57,7 +58,7 @@
     <div class="Atrasado">
         <div class="projDiv">
             <h3 class="status"> Atrasados 
-                <span class="atrasado glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                <i class="atrasado fa fa-sort-desc" aria-hidden="true"></i>
             </h3>
         </div>
         <div class="flex flex-wrap" id="atrasada">
@@ -71,7 +72,7 @@
             <div class="col-lg-md-sm projeto">
                 <div class="principal"> 
                     <a class="btn btn-default btn-lg " href="listagemTarefas.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoAtr['id_projeto'])?>">
-                        <span class="glyphicon glyphicon-folder-open" aria-hidden="true"> </span>  <?= $projetoAtr['nome_projeto']; ?>
+                        <i class="fa fa-folder-open-o" aria-hidden="true"></i>  <?= $projetoAtr['nome_projeto']; ?>
                     </a>
                 </div>   
                 <h4> <b> Data de Início: </b> <?= $dataIni; ?></h4>
@@ -91,7 +92,7 @@
     <div class="Finalizado">
         <div class="projDiv">
             <h3 class="status"> Finalizados 
-                <span class="finalizado glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                <i class="finalizado fa fa-sort-desc" aria-hidden="true"></i>
             </h3>
         </div>
         <div class="flex flex-wrap" id="finalizada">
@@ -105,7 +106,7 @@
             <div class="col-lg-md-sm projeto">
                 <div class="principal"> 
                     <a class="btn btn-default btn-lg " href="listagemTarefas.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($projetoFin['id_projeto'])?>">
-                        <span class="glyphicon glyphicon-folder-open" aria-hidden="true"> </span>  <?php echo $projetoFin['nome_projeto']; ?>
+                        <i class="fa fa-folder-open-o" aria-hidden="true"></i>  <?php echo $projetoFin['nome_projeto']; ?>
                     </a>
                 </div>   
                 <h4><b> Data de Início: </b> <?= $dataIni; ?></h4>
@@ -119,6 +120,39 @@
             <?php 
                 }
             ?>
+        </div>
+    </div>
+    <div id="cadastroProjeto" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Cadastro de Projeto</h4>
+                </div>
+                <div class="modal-body">
+                    <form name="cadProjeto" id="cadProjeto" action="../php/cadProjeto.php" method="post">
+                        <p>
+                            <label for="nomeProjeto">Nome do Projeto: </label>
+                            <input name="nomeProjeto" type="text" class="form-control" placeholder="Digite o nome do projeto" maxlength="20">
+                        </p>
+                        <p>
+                            <label for="descricao">Descrição: </label>
+                            <input type="text" name="descricao" required="required" class="form-control" placeholder="Digite a descrição do projeto" maxlength="100">
+                        </p>                
+                        <p>
+                            <label for="dataInicio">Data de início: </label>
+                            <input type="date" name="dataInicio" class="form-control">
+                        </p>
+                        <p>
+                            <label for="dataFim">Data final: </label>
+                            <input type="date" name="dataFim" class="form-control">
+                        </p>
+                        <p class="text-right">
+                            <input type="submit" name="btnCadProjeto" value="Cadastrar Projeto" class="botao btnBloq">
+                        </p>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
     </body>

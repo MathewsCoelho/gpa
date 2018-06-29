@@ -13,11 +13,9 @@ class GrupoDAO{
             . "VALUES('".$objTO->getnomeGrupo()."', '".$objTO->getDescricao()."', '".$objTO->getidUsuario()
             ."', '".$objTO->getdataCadastro() . "', 1)";
         $query = mysqli_query($this->BancoTO->conn, $sql);
-        $id = mysql_insert_id();
-        echo $id;
-        die();
+        $idGrupo = mysqli_insert_id($this->BancoTO->conn);
         if($query){
-            return $id_grupo;
+            return $idGrupo;
         } else{
             return false;
         }

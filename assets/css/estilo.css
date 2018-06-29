@@ -147,16 +147,8 @@ body{
 
 
 
-.glyphicon{
-    display: inline;
-}
-
-.glyphicon-off{
-    height: 10px;
-}
-
-.glyphicon-envelope{
-    color: #000000;
+.fa{
+    font-size: 22px;
 }
 
 .botao{
@@ -301,8 +293,7 @@ h4{
     font-size: 20px;
     background-color: #1abc9c;
     height: auto;
-    margin: 0 auto;
-    
+    margin: 0 auto;  
 }
 
 .status{
@@ -336,8 +327,4 @@ h4{
 
 .Finalizado{
     background-color: #16a085;
-}
-
-.glyphicon-menu-down{
-    font-size: 15px;
 }

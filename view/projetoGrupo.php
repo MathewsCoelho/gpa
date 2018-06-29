@@ -1,9 +1,8 @@
 <?php
 	require_once('cabecalho.php');
-	$index = base64_encode('idProjeto');
-    $idProjeto = base64_decode($_GET[$index]);
+    $idGrupo = $_POST['idGrupo'];
     include('../php/cadGrupo3.php');
-    $query = buscarGrupoEspecifico($idProjeto);
+    $query = buscarGrupoEspecifico($idGrupo);
     $grupo = mysqli_fetch_array($query);
 ?>
     <div class="header2">

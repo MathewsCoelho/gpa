@@ -10,22 +10,31 @@
         . "</script>";
     } else{
         session_start();
-        include_once 'TO/GrupoTO.php';
+        require 'TO/GrupoTO.php';
 
         $objTO = new GrupoTO();
         $objTO->setnomeGrupo($nomeGrupo);
         $objTO->setdescricao($descricao);
         $objTO->setdataCadastro($dataCadastro);
         $objTO->setidUsuario($_SESSION["id"]);
-        ($dataCadastro);
 
         include_once 'DAO/GrupoDAO.php';
 
         $objDAO = new GrupoDAO();
         $idGrupo = $objDAO->salvarGrupo($objTO);
 
-        if ($idGrupo){
-            if(salvarMembro($_SESSION['id'])){
+        if($idGrupo){
+            include_once 'TO/MembroTO.php';
+
+            $objTO2 = new MembroTO();
+            $objTO2->setidUsuario($_SESSION["id"]);
+            $objTO2->setidGrupo($idGrupo);
+
+            include_once 'DAO/MembroDAO.php';
+
+            $objDAO2 = new MembroDAO();
+
+            if($objDAO2->salvarMembro($objTO2)){
             echo "<script type='text/javascript'>"
             . " location.href = '../view/grupos.php'"
             . "</script>";
@@ -41,7 +50,7 @@
             . "alert('Falha ao cadastrar grupo.');"
             . " history.go(-1);"
             . "</script>";
-        }
+        } 
     }
 ?>
 

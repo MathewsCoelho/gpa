@@ -7,6 +7,7 @@ class ConviteTO{
     private $tipo;
     private $status;
     private $descricao;
+    private $idRemetente;
 
     
     public function __construct() {
@@ -16,6 +17,7 @@ class ConviteTO{
         $this->tipo = '';
         $this->status = '';
         $this->descricao = '';
+        $this->idRemetente = '';
     }
     
     //------ SET ------//
@@ -37,26 +39,32 @@ class ConviteTO{
     public function setdescricao($descricao){
         $this->descricao = $descricao;
     }
+    public function setidRemetente($idRemetente){
+        $this->idRemetente = $idRemetente;
+    }
 
     //----- GET ------//
     
      public function getidConvite($idConvite){
-        $this->idConvite = $idConvite;
+        return $this->idConvite;
     }
     public function getidGrupo($idGrupo){
-        $this->idGrupo = $idGrupo;
+        return $this->idGrupo;
     }
     public function getidUsuario($idUsuario){
-        $this->idUsuario = $idUsuario;
+        return $this->idUsuario;
     }
     public function gettipo($tipo){
-        $this->tipo = $tipo;
+        return $this->tipo;
     }
     public function getstatus($status){
-        $this->status = $status;
+        return $this->status;
     }
     public function getdescricao($descricao){
-        $this->descricao = $descricao;
+        return $this->descricao;
+    }
+    public function getidRemetente($idRemetente){
+        return $this->idRemetente;
     }
 }
 

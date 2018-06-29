@@ -7,6 +7,7 @@
         <script src="../assets/javascript/bootstrap.js" type="text/javascript"></script>
         <script src="../assets/javascript/funcao.js" type="text/javascript"></script>
         <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/> 
+        <link rel="stylesheet" href="../assets/css/font-awesome-4.7.0/css/font-awesome.min.css">
         <link href="../assets/css/estilo.css" rel="stylesheet" type="text/css"/>
         <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> !-->
         
@@ -28,8 +29,8 @@
                     <li><a href="../view/inicio.php"> Projetos </a></li>
                     <li><a href="../view/grupos.php"> Grupos </a></li>
                     <li><a href="../view/sobre.php"> Sobre </a></li>
-                    <li><a href="../view/convites.php"><p class="glyphicon glyphicon-bell" aria-hidden="true"></p></a></li>
-                    <li><a href="../php/logout.php"><p class="glyphicon glyphicon-off" aria-hidden="true"></p></a></li>
+                    <li><a href="../view/convites.php"><i class="fa fa-bell-o" aria-hidden="true"></i></a></li>
+                    <li><a href="../php/logout.php"><i class="fa fa-power-off" aria-hidden="true"></i></a></li>
                 </ul> 
             </div>
         </header>

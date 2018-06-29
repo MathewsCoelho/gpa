@@ -29,17 +29,17 @@ class MembroTO{
 
     //----- GET ------//
     
-     public function getidMembro($idMembro){
-        $this->idMembro = $idMembro;
+     public function getidMembro(){
+        return $this->idMembro;
     }
-    public function getidGrupo($idGrupo){
-        $this->idGrupo = $idGrupo;
+    public function getidGrupo(){
+        return $this->idGrupo;
     }
-    public function getidUsuario($idUsuario){
-        $this->idUsuario = $idUsuario;
+    public function getidUsuario(){
+        return $this->idUsuario;
     }
-    public function gettipo($tipo){
-        $this->tipo = $tipo;
+    public function gettipo(){
+        return $this->tipo;
     }
 }
 
