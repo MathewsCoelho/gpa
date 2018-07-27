@@ -38,15 +38,6 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=90 ;
 
 --
--- Extraindo dados da tabela `usuario`
---
--- --------------------------------------------------------
-
-INSERT INTO `usuario` (`id_usuario`, `email`, `senha`, `classificacao`, `escolaridade`, `data_cadastro`, `instituicao`, `nome`) VALUES
-(87, 'teste@gmail.com', '698dc19d489c4e4db73e28a713eab07b', 'Professor', 'Ensino Médio', '2015-12-06', '3', ''),
-(89, 'matheusbarcelos.c@hotmail.com', '45339359513f09155110f63f7ca91c3e', 'Professor', 'Técnico', '2015-12-06', '3', '');
-
---
 -- Estrutura da tabela `projeto`
 --
 
@@ -64,17 +55,6 @@ CREATE TABLE IF NOT EXISTS `projeto` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=128 ;
 
 --
--- Extraindo dados da tabela `projeto`
---
-
-INSERT INTO `projeto` (`id_projeto`, `nome_projeto`, `descricao`, `data_inicio`, `data_fim`, `data_cadastro`, `status_projeto`, `id_usuario`) VALUES
-(123, 'TCC', 'TCC', '2016-10-10', '2017-10-10', '2015-12-06', 'Iniciado', 89),
-(126, 'Projeto de Redes', 'Projeto com finalidade de fixar conhecimentos de redes de computadores', '2015-12-07', '2015-12-10', '2015-12-07', 'Iniciado', 87),
-(127, 'SeminÃ¡rio', 'ApresentaÃ§Ã£o de seminÃ¡rio na escola.', '2016-10-10', '2017-10-10', '2015-12-07', 'Finalizado', 87);
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `tarefa`
 --
 
@@ -90,17 +70,6 @@ CREATE TABLE IF NOT EXISTS `tarefa` (
   PRIMARY KEY (`id_tarefa`),
   KEY `id_projeto` (`id_projeto`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
-
-
---
--- Extraindo dados da tabela `tarefa`
---
-
-INSERT INTO `tarefa` (`id_tarefa`, `nome_tarefa`, `descricao`, `data_inicio`, `data_fim`, `data_cadastro`, `status_tarefa`, `id_projeto`) VALUES
-(3, 'TCC', 'TCC', '2016-10-10', '2017-10-10', '2015-12-06', 'Iniciada', 123),
-(4, 'SeguranÃ§a de Rede', 'ImplementaÃ§Ã£o de SeguranÃ§a para evitar possÃ­veis invasÃµes externas.', '2015-12-07', '2015-12-09', '2015-12-07', 'Iniciada', 126),
-(5, 'Tarefa', 'Tarefa', '2016-10-10', '2017-10-10', '2015-12-07', 'Iniciada', 127);
-
 
 --
 -- Estrutura da tabela `grupo`

@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $nomeProjeto = $_POST['nomeProjeto'];
     $descricao = $_POST['descricao'];
     $email = $_POST['email'];
@@ -12,7 +13,6 @@
         . " history.go(-1);"
         . "</script>";
     } else{
-        session_start();
 
         include 'TO/GrupoTO.php';
 

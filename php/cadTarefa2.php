@@ -5,7 +5,6 @@
         $objDAO = new TarefaDAO();
         
         $query = $objDAO->salvarTarefa();
-        
         return $query;     
     } 
     

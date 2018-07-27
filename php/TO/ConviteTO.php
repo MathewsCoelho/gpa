@@ -9,7 +9,6 @@ class ConviteTO{
     private $descricao;
     private $idRemetente;
 
-    
     public function __construct() {
         $this->idConvite = '';
         $this->idGrupo = '';
@@ -45,25 +44,25 @@ class ConviteTO{
 
     //----- GET ------//
     
-     public function getidConvite($idConvite){
+     public function getidConvite(){
         return $this->idConvite;
     }
-    public function getidGrupo($idGrupo){
+    public function getidGrupo(){
         return $this->idGrupo;
     }
-    public function getidUsuario($idUsuario){
+    public function getidUsuario(){
         return $this->idUsuario;
     }
-    public function gettipo($tipo){
+    public function gettipo(){
         return $this->tipo;
     }
-    public function getstatus($status){
+    public function getstatus(){
         return $this->status;
     }
-    public function getdescricao($descricao){
+    public function getdescricao(){
         return $this->descricao;
     }
-    public function getidRemetente($idRemetente){
+    public function getidRemetente(){
         return $this->idRemetente;
     }
 }

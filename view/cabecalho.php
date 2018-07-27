@@ -9,16 +9,19 @@
         <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/> 
         <link rel="stylesheet" href="../assets/css/font-awesome-4.7.0/css/font-awesome.min.css">
         <link href="../assets/css/estilo.css" rel="stylesheet" type="text/css"/>
-        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> !-->
         
         <?php
             session_start();
-            if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == true))
-            {
+
+            if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == true)){
                 unset($_SESSION['login']);
                 unset($_SESSION['senha']);
                 header('Location:inicial.php');
             }
+            require_once("../php/mostra_alerta.php");
+            require_once("../php/DAO/ConviteDAO.php");
+            $objDAO = new ConviteDAO();
+            $notificacoes = $objDAO->verificaConvite($_SESSION['id']);
         ?>
     </head>
     
@@ -26,12 +29,19 @@
         <header>
             <div class="header">
                 <ul class="nav nav-pills">
-                    <li><a href="../view/inicio.php"> Projetos </a></li>
-                    <li><a href="../view/grupos.php"> Grupos </a></li>
-                    <li><a href="../view/sobre.php"> Sobre </a></li>
-                    <li><a href="../view/convites.php"><i class="fa fa-bell-o" aria-hidden="true"></i></a></li>
-                    <li><a href="../php/logout.php"><i class="fa fa-power-off" aria-hidden="true"></i></a></li>
+                    <li class="fon"><a href="../view/inicio.php"> <img src="../assets/imagens/logo3.png"> </a></li>
+                    <li class="fon"><a class="elemento" href="../view/inicio.php"> Projetos </a></li>
+                    <li><a class="elemento" href="../view/grupos.php"> Grupos </a></li>
+                    <?php if($notificacoes){ ?>
+                    <li><a class="elemento" href="../view/convites.php"><i class="fa fa-exclamation" aria-hidden="true"> </i></a></li>
+                    <?php } else{ ?>
+                    <li><a class="elemento" href="../view/convites.php"><i class="fa fa-bell-o" aria-hidden="true"> </i></a></li>
+                    <?php } ?>
+                    <li><a class="elemento" href="../php/logout.php"><i class="fa fa-power-off" aria-hidden="true"></i></a></li>
                 </ul> 
             </div>
         </header>
-    
+    <div class="alerta"> 
+        <?php mostraAlerta("success"); ?>
+        <?php mostraAlerta("danger"); ?> 
+    </div>

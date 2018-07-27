@@ -1,4 +1,5 @@
 <?php
+session_start();
 $index = base64_encode('idProjeto');
 $idProjeto = base64_decode($_GET[$index]);
 
@@ -9,12 +10,13 @@ $objDAO = new GrupoDAO();
 $query = $objDAO->excluirGrupo($idProjeto);
 
 if($query){
+	$_SESSION['success'] = "Grupo excluído com sucesso.";
     echo "<script type='text/javascript'>"
     . "location.href = '../view/grupos.php';"
     . "</script>";
 } else{
+	$_SESSION['danger'] = "Falha ao excluir grupo.";
     echo "<script type='text/javascript'>"
-    . " alert ('Erro ao excluir grupo.');"
     . "history.go(-1);"
     . "</script>";
 }

@@ -1,11 +1,12 @@
 <?php
+    session_start();
     $nomeProjeto = $_POST['nomeProjeto'];
     $descricao = $_POST['descricao'];
     $dataInicio = $_POST['dataInicio'];
     $dataFim = $_POST['dataFim'];
     $data_cadastro = date('Y-m-d');
     $statusProjeto = 1;
-        
+
     if(empty($nomeProjeto) || empty($descricao) || empty($dataInicio) || empty($dataFim)){
         echo "<script type='text/javascript'>"
         . "alert('Por favor preencha todos os campos.');"
@@ -18,7 +19,6 @@
         . " history.go(-1);"
         . "</script>";
     }else{
-            session_start();
 
             include 'TO/ProjetoTO.php';
 
@@ -36,12 +36,11 @@
             $objDAO = new ProjetoDAO();
 
             if ($objDAO->salvarProjeto($objTO)) {
+               $_SESSION['success'] = "Projeto cadastrado com sucesso.";
                 header('location: ../view/inicio.php');
             } else {
-                echo "<script type='text/javascript'>"
-                . "alert('Projeto já cadastrado.');"
-                . " history.go(-1);"
-                . "</script>";
+                $_SESSION['danger'] = "Falha ao cadastrar projeto.";
+                header('location: ../view/inicio.php');
             }
         }
     }

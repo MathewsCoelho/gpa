@@ -9,7 +9,7 @@ class ProjetoTO{
     private $dataCadastro;
     private $idUsuario;
     private $statusProjeto;
-    
+
     public function __construct() {
         $this->nomeProjeto = '';
         $this->descricao = '';
@@ -45,7 +45,6 @@ class ProjetoTO{
     public function setstatusProjeto($statusProjeto){
         $this->statusProjeto = $statusProjeto;
     }
-
     //--------------------------------MÉTODO GET --------------------------//      
     public function getnomeProjeto(){
         return $this->nomeProjeto;

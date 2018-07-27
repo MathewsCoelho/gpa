@@ -8,6 +8,7 @@
     $id = "";
     
     if(empty($email) || empty($senha)){
+        $_SESSION["danger"] = "Preencha todos os campos.";
         echo "<script type='text/javascript'>"
         . "alert('Por favor preencha todos os campos.');"
         . " history.go(-1);"
@@ -33,9 +34,9 @@
             . "</script>";
         } else{
             unset ($_SESSION['email']);
-            unset ($_SESSION['senha']);   
+            unset ($_SESSION['senha']);
+            $_SESSION["danger"] = "O usuário não está cadastrado.";   
             echo "<script type='text/javascript'>"
-                . "alert('Usuário não está cadastrado.');"
                 . " history.go(-1);"
                 . "</script>";
         }

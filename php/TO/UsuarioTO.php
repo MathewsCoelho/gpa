@@ -1,5 +1,4 @@
 <?php
-
 class UsuarioTO{
     private $Nome;
     private $Email;
@@ -19,9 +18,7 @@ class UsuarioTO{
         $this->dataCadastro = '';
         $this->idUsuario = '';
     }
-
-//--------------------------------MÉTODO SET --------------------------//   
-    
+//--------------------------------MÉTODO SET --------------------------//      
     public function setNome($nome){
         $this->Nome = $nome;
     }
@@ -43,9 +40,7 @@ class UsuarioTO{
     public function setidUsuario($idUsuario){
        $this->idUsuario = $idUsuario;
     }
-
-//--------------------------------MÉTODO GET --------------------------//    
-    
+//--------------------------------MÉTODO GET --------------------------//      
     public function getNome(){
         return $this->Nome;
     }

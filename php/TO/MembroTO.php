@@ -11,8 +11,7 @@ class MembroTO{
         $this->idGrupo = '';
         $this->idUsuario = '';
         $this->tipo = '';
-    }
-    
+    }  
     //------ SET ------//
     public function setidMembro($idMembro){
         $this->idMembro = $idMembro;
@@ -26,9 +25,7 @@ class MembroTO{
     public function settipo($tipo){
         $this->tipo = $tipo;
     }
-
-    //----- GET ------//
-    
+    //----- GET ------//   
      public function getidMembro(){
         return $this->idMembro;
     }

@@ -2,6 +2,18 @@
     font-family: "SlimJoe";
     src: url('../fonts/SlimJoe.otf');
 }
+@font-face{
+    font-family: "Molengo";
+    src: url('../fonts/Molengo.ttf');
+}
+
+p{
+    margin: 0;
+}
+
+p, a, h1, h2, h3, h4, label, input{
+    font-family: "Molengo";
+}
     
 body{
     background-color: #4b4b4b;
@@ -12,6 +24,10 @@ body{
     background-image: url(../imagens/wp.jpg);
     background-repeat: no-repeat;
     margin: 0;
+}
+
+.fon{
+    float: left;
 }
 
 .header{
@@ -29,7 +45,7 @@ body{
     padding: 5px 0 0;
 }
 
-.header ul li a{
+.elemento{
     font-family: "SlimJoe";
     text-decoration: none;
     color: #4b4b4b;
@@ -38,7 +54,7 @@ body{
     font-weight: bold;
 }
 
-.header li a:hover{
+.elemento:hover{
     background-color: #4b4b4b;
     color: #ffffff;
     -webkit-transition: all .6s ease;
@@ -47,48 +63,28 @@ body{
     transition: all .6s ease;
 }
 
-.header li a:focus{
+.elemento:focus{
+    background-color: #4b4b4b;
+    color: #ffffff;
+} 
+
+.elemento:hover{
+    background-color: #4b4b4b;
+    color: #ffffff;
+    -webkit-transition: all .6s ease;
+    -moz-transition: all .6s ease;
+    -ms-transition: all .6s ease;
+    transition: all .6s ease;
+}
+
+.elemento:focus{
     background-color: #4b4b4b;
     color: #ffffff;
 } 
 
 .headerInicial{
-    width: 100%;
-    background-color: #f5f6fa;
     text-align: right;
-    box-shadow: 0 0 25px #333333;
 }
-
-.headerInicial ul{
-    display: inline-block;
-}
-
-.headerInicial ul li{
-    padding: 5px 0 0;
-}
-
-.headerInicial ul li a{
-    font-family: "SlimJoe";
-    text-decoration: none;
-    color: #4b4b4b;
-    font-size: 20px;
-    display: block;
-    font-weight: bold;
-}
-
-.headerInicial li a:hover{
-    background-color: #4b4b4b;
-    color: #ffffff;
-    -webkit-transition: all .6s ease;
-    -moz-transition: all .6s ease;
-    -ms-transition: all .6s ease;
-    transition: all .6s ease;
-}
-
-.headerInicial li a:focus{
-    background-color: #4b4b4b;
-    color: #ffffff;
-} 
 
 .header2{
     width: 100%;
@@ -123,6 +119,11 @@ body{
     display: block;
 }
 
+.modal-content{
+    background-color: #ecf0f1;
+    padding: 0 20px 0 20px;
+}
+
 .formularioCad{
     margin: 30px auto;
     width: 450px;
@@ -138,23 +139,22 @@ body{
 }
 
 .logo{
-    margin: 0px auto;
+    margin: 0 auto;
 }
-
-.h4{
-    color: #FFFFFF;
-}
-
-
 
 .fa{
     font-size: 22px;
 }
 
+.fa-times{
+    font-size: 16px;
+    padding: 5px;
+}
+
 .botao{
     width: auto;
     height: auto;
-    padding: 10px 8px;
+    padding: 6px;
     margin: 0;
     color: #fff;
     background-color: #4b4b4b;
@@ -171,13 +171,26 @@ body{
     background-color: #373636;
 }
 
+.btnPadrao{
+    background-color: transparent;
+    padding: 10px 16px;
+    font-size: 17px;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.btnPadrao:hover, .btnSucesso:focus{
+    background-color: #fff;
+    color: #4b4b4b;
+}
+
 .btnBloq{
     display: block;
     width: 100%;
 }
 
 .btnSucesso{
-    background-color: #ecf0f1;
+    background-color: transparent;
     border: 1px solid #13c75e;
     color: #13c75e;
 }
@@ -187,7 +200,7 @@ body{
 }
 
 .btnEdicao{
-    background-color: #ecf0f1;
+    background-color: transparent;
     border: 1px solid #3498db;
     color: #3498db;
 }
@@ -197,7 +210,7 @@ body{
 }
 
 .btnPerigo{
-    background-color: #ecf0f1;
+    background-color: transparent;
     border: 1px solid #e74c3c;
     color: #e74c3c;
 }
@@ -209,13 +222,12 @@ body{
 .btnNovo{
     background-color: #304FFE;
     color: #fff;
-    padding: 13px 11px;
-    font-size: 18px;
+    padding: 6px 12px;
+    font-size: 16px;
 }
 
 .btnNovo:hover, .btnNovo:focus{
     background-color: #2239bd;
-
 }
 
 .btnProjeto{
@@ -241,22 +253,50 @@ body{
     display: block;
 }
 
+.principal{
+    margin: 20px auto;
+}
+
+.grupo {
+    text-align: center;
+    background-color: #ecf0f1;
+    margin: 15px 12px;
+    height: 200px;
+    width: 280px;
+    -moz-box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
+    box-shadow: 1px 1px 18px 3px rgba(0, 17, 50, 0.36);
+    border-radius: 10px;
+    float: left;
+    display: block;
+}
+
+.principalGrupo{
+    background-color: #34495e;
+    margin: 0;
+    height: 60px;
+    margin-bottom: 30px;
+}
+
+.principalGrupo:hover{
+    background-color: #2c3e50;
+}
+
 h4{
-   font-size: small;
    color: #34495e;
 }
 
-.principal{
-    color: #19b698;
-    margin: 20px auto;
-    width: 200px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.group{
+    padding: 15px;
+    color: #fff;
+    width: 280px;
+    height: 60px;
 }
 
-.projetoEspecifico{
-    margin: 10px 10px;
+.principalGrupo input{
+    background-color: transparent;
+    border: none;
 }
+
 
 .conteudo1{
     width: 100%;
@@ -288,18 +328,12 @@ h4{
     border:#4b4b4b solid 1px;
 }
 
-.sobrenos{
-    font-family: sans-serif;
-    font-size: 20px;
-    background-color: #1abc9c;
-    height: auto;
-    margin: 0 auto;  
-}
-
 .status{
     color: #FFFFFF;
     margin: 0 0 0 20px;
-    width: 200px;
+    padding-bottom: 7px;
+    width: 220px;
+
 }
 
 .projDiv{
@@ -328,3 +362,62 @@ h4{
 .Finalizado{
     background-color: #16a085;
 }
+
+.bannerInicial{
+    background-color: #ecf0f1;
+    height: 350px;
+    width: 500px;
+    margin-top: 80px;
+    padding: 25px;
+    text-align: center;
+}
+
+.alerta {
+    position: fixed; 
+    top: 100px; 
+    right: 0; 
+    z-index: 99999; 
+    height: calc(100% - 600px); 
+    padding-left: 10px; 
+    overflow-y: auto; 
+}
+
+.conteudoAlerta{
+    width: 300px;
+    height: 50px;
+    opacity: 0.8;
+    border-radius: 10px 0  0 10px;
+    box-shadow: 2px 2px 3px 0 rgba(0,0,0,.6);
+}
+
+.conteudoAlerta:hover{
+    opacity: 1;
+}
+
+.conteudoAlerta p{
+    padding: 15px 0 0 60px;
+    color: white;
+}
+
+.conteudoAlerta button{
+    position: absolute;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    border: none;
+    color: white;
+}
+
+.danger{
+    background-color: #e74c3c;
+}
+
+.success{
+    background-color: #13c75e;
+}
+
+.logoInit{
+    float: left;
+    padding: 15px;
+}
+

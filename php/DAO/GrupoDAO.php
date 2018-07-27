@@ -1,9 +1,7 @@
 <?php
-
 include_once '../php/TO/BancoTO.php';
 
-class GrupoDAO{
-    
+class GrupoDAO{   
     public function __construct() {
         $this->BancoTO = new BancoTO();
     }
@@ -19,10 +17,9 @@ class GrupoDAO{
         } else{
             return false;
         }
-    }
-    
+    }   
     public function buscarGrupo($id){        
-        $sql = "SELECT * FROM grupo WHERE id_usuario = " . $id . " AND status = 1"; 
+        $sql = "SELECT * FROM grupo JOIN membro USING(id_grupo) WHERE membro.id_usuario = " . $id . " AND status = 1"; 
         $grupos = array();   
         $query = mysqli_query($this->BancoTO->conn, $sql);                
         if($query){
@@ -33,7 +30,6 @@ class GrupoDAO{
             return false;
         }
     }
-
     public function buscarGrupoEspecifico($id){
         $sql = "SELECT * FROM grupo WHERE id_grupo = " . $id;
         $query = mysqli_query($this->BancoTO->conn, $sql);
@@ -43,7 +39,17 @@ class GrupoDAO{
             return false;
         }
     }
-
+    public function editarGrupo($objTO){
+        $sql = "UPDATE grupo SET " 
+            . "nome_grupo='". $objTO->getnomeGrupo() ."', " 
+            . "descricao='". $objTO->getdescricao() ."' " 
+            . "WHERE id_grupo = " . $objTO->getidGrupo() . "";   
+        if(mysqli_query($this->BancoTO->conn, $sql)){
+            return true;
+        } else{
+            return false;
+        }        
+    }
    public function excluirGrupo($id){
         $sql = "UPDATE grupo SET status = 0 WHERE id_grupo = " . $id;
         if(mysqli_query($this->BancoTO->conn, $sql)){
@@ -52,7 +58,6 @@ class GrupoDAO{
             return false;
         }
     }
-
 }
 
 ?>

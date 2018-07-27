@@ -6,16 +6,14 @@ class GrupoTO{
     private $descricao;
     private $idUsuario;
     private $dataCadastro;
-
-    
+   
     public function __construct() {
         $this->idGrupo = '';
         $this->descricao = '';
         $this->nomeGrupo = '';
         $this->idUsuario = '';
         $this->dataCadastro = '';
-    }
-    
+    }    
     //------ SET ------//
     public function setidGrupo($idGrupo){
         $this->idGrupo = $idGrupo;
@@ -32,9 +30,7 @@ class GrupoTO{
     public function setdataCadastro($dataCadastro){
         $this->dataCadastro = $dataCadastro;
     }
-
-    //----- GET ------//
-    
+    //----- GET ------//    
     public function getidGrupo(){
         return $this->idGrupo;
     }

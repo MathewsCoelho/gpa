@@ -1,8 +1,11 @@
 <?php
 	require_once('cabecalho.php');
-    $idGrupo = $_POST['idGrupo'];
+    if(!isset($_SESSION['id_grupo'])){
+        $idGrupo = $_POST['idGrupo'];
+        $_SESSION["id_grupo"] = $idGrupo;
+    }
     include('../php/cadGrupo3.php');
-    $query = buscarGrupoEspecifico($idGrupo);
+    $query = buscarGrupoEspecifico($_SESSION["id_grupo"]);
     $grupo = mysqli_fetch_array($query);
 ?>
     <div class="header2">
@@ -12,16 +15,17 @@
             <li> <a href="editaProjeto.php?<?php echo base64_encode("idProjeto"). "=" . base64_encode($idProjeto);?>"> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> </a> </li> 
         </ul>
     </div>
-
     <div class="conteudo1">
         <div class="btnProjeto">
         	<div class="btn-group">
-            <a href="cadProjeto.php" class="btn btn-default btn-lg ">
-                <span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Novo Projeto
-            </a>
-            <a href="cadMembro.php" class="btn btn-default btn-lg">
-                <span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Adicionar Membros
-            </a>
+                <a href="cadProjeto.php" class="botao btnPadrao">
+                    <p> <span class="fa fa-plus-circle" aria-hidden="true"></span> Novo Projeto </p>
+                </a>
+            </div>
+            <div class="btn-group">
+                <a href="cadMembro.php" class="botao btnPadrao">
+                    <p> <i class="fa fa-user-plus" aria-hidden="true"></i> Adicionar Membros </p>
+                </a>
         	</div>
         </div>
     </div>

@@ -7,22 +7,19 @@
     $grupo = mysqli_fetch_array($query);
 ?>
         <div class="formularioCad formularios">            
-            <form name="cadastroGrupo" id="Cadastro" action="../php/cadGrupo.php" method="post">
-                <p>
+            <form name="cadastroGrupo" id="Cadastro" action="../php/editaGrupo.php" method="post">
+                <input type="hidden" name="id_grupo" value="<?= $grupo['id_grupo']?>">
+                <div class="form-group">
                     <label for="nomeGrupo">Nome do Grupo: </label>
                     <input name="nomeGrupo" type="text" class="form-control" value="<?= $grupo['nome_grupo'] ?>" placeholder="Digite o nome do Projeto" maxlength="20">
-                </p>
-                <p>
+                </div>
+                <div class="form-group">
                     <label for="descricao">Descrição: </label>
                     <input name="descricao" type="text" class="form-control" value="<?= $grupo['descricao'] ?>" placeholder="Digite a descrição do Projeto" maxlength="100">
-                </p>
-                <p class="text-right">
-                    <input type="submit" name="btnCadastro" value="Cadastrar Grupo" class="botao btnBloq">
-                </p>
-                <!--<p>
-                    <label> Email do Colaborador: </label>
-                    <input name="email" type="text" class="form-control" placeholder="Digite o email do Colaborador" maxlength="50">
-                </p> !-->             
+                </div>
+                <div class="form-group text-right">
+                    <input type="submit" name="btnCadastro" value="Editar Grupo" class="botao btnBloq btnNovo">
+                </div>       
             </form>
             <a href="grupos.php" class="text-center">
                 Voltar

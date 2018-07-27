@@ -1,7 +1,6 @@
 <?php
 
 class TarefaTO{
-    
     private $nomeTarefa;
     private $descricao;
     private $dataInicio;
@@ -12,7 +11,6 @@ class TarefaTO{
     private $statusTarefa;
     
     public function __construct() {
-
         $this->nomeTarefa = '';
         $this->descricao = '';
         $this->dataInicio = '';
@@ -20,13 +18,9 @@ class TarefaTO{
         $this->dataCadastro = '';
         $this->idTarefa = '';
         $this->idProjeto = '';
-        $this->statusTarefa = '';
-                
-        
+        $this->statusTarefa = '';    
     }
-
     //--------------------------------MÉTODO SET --------------------------//  
-
     public function setnomeTarefa($nomeTarefa){
         $this->nomeTarefa = $nomeTarefa;
     }
@@ -51,9 +45,7 @@ class TarefaTO{
     public function setstatusTarefa($statusTarefa){
         $this->statusTarefa = $statusTarefa;
     }
-
-    //--------------------------------MÉTODO GET --------------------------//    
-    
+    //--------------------------------MÉTODO GET --------------------------//        
     public function getnomeTarefa(){
         return $this->nomeTarefa;
     }

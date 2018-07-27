@@ -1,4 +1,5 @@
-<?php    
+<?php
+    session_start();    
     $nomeTarefa = $_POST['nomeTarefa'];
     $descricao = $_POST['descricao'];
     $dataInicio = $_POST['dataInicio'];
@@ -38,17 +39,17 @@
             $objDAO = new TarefaDAO();
             
             if ($objDAO->salvarTarefa($objTO)) {
-
+                $_SESSION['success'] = "Tarefa cadastrada com sucesso.";
                 echo "<script type='text/javascript'>"
-                . "history.go(-2)"
+                . "history.go(-1)"
                 . "</script>";
             } else {
+                $_SESSION['danger'] = "Falha ao cadastrar tarefa.";
                 echo "<script type='text/javascript'>"
+                . "history.go(-1)"
                 . "</script>";
             }
         }
     }
-?>
-
 ?>
 

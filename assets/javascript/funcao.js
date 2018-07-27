@@ -233,24 +233,64 @@ $(document).ready(function ($){
             location.reload();
         }
     });
-    
-    
-    $("input[name='btnAdd']").on("click", function(event){
-   
+
+    $(".btnExcluirGrupo").on("click", function (event){
+        event.preventDefault();
+        var href = $(this).attr('href');
+        var excluir = confirm("Deseja excluir mesmo este grupo?");
+        
+        if(excluir){
+            $.ajax({
+                type: 'GET',
+                url: href,
+                success: function (result) {
+                    location.reload();
+                }
+            });
+        } else{
+            location.reload();
+        }
+    });
+
+    $(".btnRecusarConvite").on("click", function (event){
+        event.preventDefault();
+        var href = $(this).attr('href');
+        var excluir = confirm("Deseja mesmo recusar este convite?");
+        
+        if(excluir){
+            $.ajax({
+                type: 'GET',
+                url: href,
+                success: function (result) {
+                    location.reload();
+                }
+            });
+        } else{
+            location.reload();
+        }
+    });
+
+    $("#remove").on("click", function (event) {
+        $( ".conteudoAlerta" ).remove();
     });
 
     $(".andamento").on("click", function(event){
-       $("#iniciada").slideToggle(); 
+       $("#iniciada").slideToggle();
+       $(".andamento").toggleClass('fa-caret-down');
+        $(".andamento").toggleClass('fa-caret-up'); 
     });
     $(".atrasado").on("click", function(event){
-       $("#atrasada").slideToggle(); 
+       $("#atrasada").slideToggle();
+       $(".atrasado").toggleClass('fa-caret-down');
+        $(".atrasado").toggleClass('fa-caret-up');  
     });
     $(".finalizado").on("click", function(event){
        $("#finalizada").slideToggle(); 
+       $(".finalizado").toggleClass('fa-caret-down');
+        $(".finalizado").toggleClass('fa-caret-up'); 
     });
 
     $("#btn-mensagem").click(function(){
         $("#modal-mensagem").modal();
     });
-
 });

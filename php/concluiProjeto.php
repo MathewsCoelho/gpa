@@ -1,4 +1,5 @@
 <?php
+session_start();
 $index = base64_encode('idProjeto');
 
 $idProjeto = base64_decode($_GET[$index]);
@@ -11,15 +12,11 @@ $query = $objDAO->concluirProjeto($idProjeto);
 
 
 if($query){
-    echo "<script type='text/javascript'>"
-    . "location.href = '../view/inicio.php';"
-    . "</script>";
+	$_SESSION["success"] = "Projeto concluído com sucesso.";
+	header('location: ../view/inicio.php');
 } else{
-    
-    echo "<script type='text/javascript'>"
-    . " alert ('Erro ao concluir projeto.');"
-    . "history.go(-1);"
-    . "</script>";
+    $_SESSION["danger"] = "Erro ao concluir projeto.";
+    header('location: ../view/inicio.php');
 }
 
 ?>

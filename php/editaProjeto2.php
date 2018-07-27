@@ -1,13 +1,12 @@
 <?php
-    
+session_start();
     $nomeProjeto = $_POST['nomeProjeto'];
     $descricao = $_POST['descricao'];
     $dataInicio = $_POST['dataInicio'];
     $dataFim = $_POST['dataFim'];
     $statusProjeto = $_POST['statusProjeto'];
     $idProjeto = $_GET['idProjeto'];
-    
-    
+       
     if(empty($nomeProjeto) || empty($descricao) || empty($dataInicio) || empty($dataFim)){
         echo "<script type='text/javascript'>"
         . "alert('Por favor preencha todos os campos.');"
@@ -19,9 +18,7 @@
         . "alert('Por favor digite uma data válida.');"
         . " history.go(-1);"
         . "</script>";
-        }else{
-            session_start();
-       
+        }else{       
             include 'TO/ProjetoTO.php';
             $objTO = new ProjetoTO();
             $objTO->setnomeProjeto($nomeProjeto);
@@ -36,13 +33,11 @@
             $objDAO = new ProjetoDAO();
 
             if ($objDAO->editarProjeto($objTO, $idProjeto)) {
-
-                echo "<script type='text/javascript'>"
-                . " location.href = '../view/inicio.php';"
-                . "</script>";
+                $_SESSION['success'] = "Projeto editado com sucesso.";
+                header("Location:../view/inicio.php");
             } else {
+                $_SESSION['success'] = "Falha ao editar projeto.";
                 echo "<script type='text/javascript'>"
-                . "alert('Erro ao editar projeto.');"
                 . " history.go(-1);"
                 . "</script>";
             }

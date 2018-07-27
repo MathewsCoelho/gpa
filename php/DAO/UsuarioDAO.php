@@ -1,5 +1,4 @@
 <?php
-
 include_once '../php/TO/BancoTO.php';
 
 class UsuarioDAO{   
@@ -16,13 +15,22 @@ class UsuarioDAO{
         } else{
             return false;
         }
-    }
-    
+    }   
     public function logarUsuario($email, $senha){
         $sql = "SELECT * FROM usuario " . "WHERE email = '" . $email . "' AND senha = '" . $senha . "'";
         $query = mysqli_query($this->BancoTO->conn, $sql);
         if($query && mysqli_num_rows($query) > 0){
             return $query; 
+        } else{
+            return false;
+        }
+    }
+    public function verificarUsuario($email){
+        $sql = "SELECT id_usuario FROM usuario WHERE email = '$email'";
+        $query = mysqli_query($this->BancoTO->conn, $sql);
+        if($query){
+            $registro = mysqli_fetch_array($query);
+            return $registro['id_usuario'];
         } else{
             return false;
         }

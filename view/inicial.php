@@ -2,15 +2,13 @@
     require_once("cabecalhoInicial.php");
 ?> 
     <body class="bodyAzul">
-        <div class="botoes">
-            <div class="backgroundInicial col-xs-6 text-center">
-                <h4 class="h4">Ainda não fez seu cadastro? Clique aqui!</h4>
-                <a href="cadUsuario.php" class="btn btn-lg btn-block btn-default">Cadastrar</a>
-            </div>
-            
-            <div class="backgroundInicial col-xs-6 col-xs-offset-1 text-center"> 
-                <h4 class="h4">Já possui cadastro? Clique aqui e faça seu login!</h4>
-                <a href="loginUsuario.php" class="btn btn-lg btn-block btn-default">Login</a>
+        <div class="conteudo1">
+            <div class="bannerInicial">
+                <img src="../assets/imagens/logo.png">
+                <h3> GPA é a ferramenta para auxiliar na organização de seus projetos. </h3>
+                <a href="cadUsuario.php" class="botao btnBloq btnNovo"> Cadastre-se. É grátis! </a>
+                <br>
+                <a href="loginUsuario.php" class="botao btnBloq"> Fazer login </a>
             </div>
         </div>
     </body>

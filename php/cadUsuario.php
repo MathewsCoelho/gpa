@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
@@ -8,16 +9,14 @@
     $data_cadastro =  date('Y-m-d');
         
     if(empty($nome) || empty($email) || empty($senha) || empty($confSenha)){
+        $_SESSION['danger'] = "Por favor preencha todos os campos.";
         echo "<script type='text/javascript'>"
-        . "alert('Por favor preencha todos os campos.');"
         . " history.go(-1);"
         . "</script>";
     } else{
         if(isMail($email)){
             if($senha == $confSenha) {
-                session_start();
-
-                include 'TO/UsuarioTO.php';
+              include 'TO/UsuarioTO.php';
 
                 $objTO = new UsuarioTO();
                 $objTO->setNome($nome);
@@ -32,22 +31,22 @@
                 $objDAO = new UsuarioDAO();
 
                 if ($objDAO->salvarUsuario($objTO)) {
-
+                    $_SESSION["success"] = "Usuário cadastrado com sucesso.";
                     echo "<script type='text/javascript'>"
                     . " location.href = '../view/loginUsuario.php'"
                     . "</script>";
                 } else {
+                    $_SESSION["danger"] = "Usuário já está cadastrado.";
                     echo "<script type='text/javascript'>"
-                    . "alert('Usuário já está cadastrado.');"
                     . " history.go(-1);"
                     . "</script>";
                 }
             } else {
-                echo "As senhas não são iguais.";
+                $_SESSION["danger"] = "As senhas digitadas não são iguais.";
             }
         } else{
+            $_SESSION["danger"] = "Digite um email válido.";
             echo "<script type='text/javascript'>"
-                    . "alert('Digite um email válido.');"
                     . " history.go(-1);" 
                     . "</script>";
         }
